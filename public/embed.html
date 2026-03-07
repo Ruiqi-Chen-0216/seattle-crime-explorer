@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@7"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: transparent; overflow-x: hidden; }
+    #vis { width: 100%; }
+    #error {
+      display: none;
+      padding: 16px;
+      color: #b91c1c;
+      font-family: sans-serif;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <div id="vis"></div>
+  <div id="error"></div>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const specUrl = params.get('spec');
+
+    function showError(msg) {
+      document.getElementById('error').style.display = 'block';
+      document.getElementById('error').textContent = 'Error: ' + msg;
+    }
+
+    if (!specUrl) {
+      showError('No spec URL provided.');
+    } else {
+      fetch(specUrl)
+        .then(function(res) {
+          if (!res.ok) throw new Error('HTTP ' + res.status + ' fetching ' + specUrl);
+          return res.json();
+        })
+        .then(function(spec) {
+          return vegaEmbed('#vis', spec, {
+            actions: false,
+            renderer: 'svg',
+          });
+        })
+        .then(function(result) {
+          // Notify parent of actual rendered height for iframe resizing
+          var height = document.getElementById('vis').scrollHeight;
+          window.parent.postMessage({ type: 'vegaHeight', height: height }, '*');
+        })
+        .catch(function(err) {
+          showError(err.message);
+        });
+    }
+  </script>
+</body>
+</html>
