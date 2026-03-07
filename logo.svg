@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- Background -->
+  <rect width="64" height="64" rx="12" fill="#383838"/>
+
+  <!-- Simplified Space Needle silhouette -->
+  <!-- Needle top spike -->
+  <line x1="32" y1="6" x2="32" y2="14" stroke="white" stroke-width="2" stroke-linecap="round"/>
+  <!-- Observation deck disc -->
+  <ellipse cx="32" cy="17" rx="8" ry="3" fill="white"/>
+  <!-- Tapered tower shaft -->
+  <polygon points="30,20 34,20 33.5,36 30.5,36" fill="white"/>
+  <!-- Tripod legs -->
+  <line x1="30.5" y1="36" x2="22" y2="46" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
+  <line x1="33.5" y1="36" x2="42" y2="46" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
+  <line x1="32" y1="36" x2="32" y2="46" stroke="white" stroke-width="2" stroke-linecap="round"/>
+  <!-- Base platform -->
+  <rect x="20" y="46" width="24" height="2.5" rx="1.2" fill="white"/>
+
+  <!-- Small data bars at bottom-right (crime data motif) -->
+  <rect x="38" y="52" width="4" height="6" rx="1" fill="white" opacity="0.55"/>
+  <rect x="44" y="49" width="4" height="9" rx="1" fill="white" opacity="0.75"/>
+  <rect x="50" y="54" width="4" height="4" rx="1" fill="white" opacity="0.45"/>
+</svg>
