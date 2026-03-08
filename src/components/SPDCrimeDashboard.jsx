@@ -2,6 +2,8 @@ import React from 'react';
 import DashboardHeader from './common/DashboardHeader';
 import DashboardFooter from './common/DashboardFooter';
 import VegaChart from './common/VegaChart';
+import TableauViz from './common/TableauViz';
+import { useTableau } from '../hooks/useTableau';
 
 // ── Reusable section wrapper ──────────────────────────────────────────────────
 const Section = ({ id, bg = 'bg-white', children }) => (
@@ -39,6 +41,8 @@ const Placeholder = ({ label, height = 340 }) => (
 
 // ── Main page ─────────────────────────────────────────────────────────────────
 const SPDCrimeDashboard = () => {
+  const { isTableauLoaded } = useTableau();
+
   return (
     <div className="bg-[#FAFAFA] font-sans">
       {/* ── Hero ─────────────────────────────────────────────────────────── */}
@@ -75,28 +79,34 @@ const SPDCrimeDashboard = () => {
       <Section id="what" bg="bg-[#FAFAFA]">
         <SectionQuestion
           step="02 — What"
-          question="What types of crime define the neighborhoods with the most incidents?"
+          question="What types of crime define each neighborhood — and how do they differ?"
         />
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
-          <Placeholder label="Radar Chart — Crime Type Composition by Neighborhood" height={360} />
-          <div className="text-sm text-gray-600 leading-relaxed space-y-3">
-            <p>
-              The radar chart compares crime composition across two neighborhoods.
-              By default it displays the two neighborhoods with the highest total
-              crime counts from the map above, allowing users to move directly from
-              spatial concentration to crime-type structure.
-            </p>
-            <p>
-              Similar overall counts do not necessarily mean similar crime profiles.
-              This view helps users distinguish between neighborhoods that are high
-              in the same types of crime and those that differ structurally.
-            </p>
-            <p>
-              Selecting a crime type on the radar updates the time-of-day view below
-              to highlight that category.
-            </p>
-          </div>
-        </div>
+        <p className="text-sm text-gray-600 leading-relaxed max-w-2xl mb-2">
+          Similar overall crime counts don't mean similar crime profiles. This radar
+          chart compares the share of each offense type across Seattle neighborhoods
+          — use the checkbox panel to select any two neighborhoods and see how their
+          crime composition diverges.
+        </p>
+        <p className="text-sm text-gray-600 leading-relaxed max-w-2xl mb-1">
+          For example, Capitol Hill and Downtown Seattle share high rates of
+          larceny, burglary, and assault — but Downtown stands apart with elevated
+          levels of human trafficking, gambling offenses, and liquor law violations,
+          categories that barely register in Capitol Hill.
+        </p>
+        <p className="text-xs text-gray-400 mb-6">
+          Each axis shows the neighborhood's share of that crime type relative to
+          the citywide distribution (2017–2025).
+        </p>
+        {isTableauLoaded ? (
+          <TableauViz
+            vizUrl="https://public.tableau.com/views/SeattleCrimeWatch/CityWideRadarChart"
+            height={700}
+            hideTabs={true}
+            hideToolbar={false}
+          />
+        ) : (
+          <Placeholder label="Loading Tableau radar chart…" height={700} />
+        )}
       </Section>
 
       {/* ── Section 3: When ──────────────────────────────────────────────── */}
