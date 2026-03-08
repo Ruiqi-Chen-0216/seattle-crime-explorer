@@ -139,29 +139,34 @@ const SPDCrimeDashboard = () => {
       <Section id="context" bg="bg-[#FAFAFA]">
         <SectionQuestion
           step="04 — Context"
-          question="How do crime counts relate to neighborhood median income?"
+          question="Do neighborhoods with lower median incomes see higher crime counts?"
         />
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
-          <div className="text-sm text-gray-600 leading-relaxed space-y-3">
-            <p>
-              The final view adds neighborhood context by comparing crime counts
-              with neighborhood median income. This does not imply a simple causal
-              relationship, but it helps users explore whether high-crime
-              neighborhoods tend to share broader socioeconomic characteristics.
-            </p>
-            <p>
-              Neighborhoods selected in previous views are highlighted here,
-              allowing users to situate their comparison within the citywide
-              income spectrum.
-            </p>
-            <p className="text-xs text-gray-400 pt-2 border-t border-gray-200">
-              This view should be interpreted as contextual rather than causal.
-              It is intended to support comparison, not to reduce crime patterns
-              to a single socioeconomic explanation.
-            </p>
-          </div>
-          <Placeholder label="Scatter — Crime Count × Neighborhood Median Income" height={360} />
-        </div>
+        <p className="text-sm text-gray-600 leading-relaxed max-w-2xl mb-2">
+          The bar chart ranks every Seattle neighborhood by total crime count and
+          encodes median household income through color — darker bars indicate
+          higher income. A clear pattern emerges: the neighborhoods with the most
+          reported crime tend to also be those with the lowest median incomes.
+        </p>
+        <p className="text-sm text-gray-600 leading-relaxed max-w-2xl mb-1">
+          Switch to the <em>Treemap</em> tab for a proportional area view, or the
+          <em> Time Series</em> tab to see how per-capita crime rates have shifted
+          across years for each neighborhood.
+        </p>
+        <p className="text-xs text-gray-400 mb-6">
+          This relationship is contextual, not causal — income correlates with
+          many other neighborhood factors including density, land use, and
+          reporting rates.
+        </p>
+        {isTableauLoaded ? (
+          <TableauViz
+            vizUrl="https://public.tableau.com/views/Final_Visualization_17727382627890/BarChartIncomesandCrimeCount"
+            height={700}
+            hideTabs={false}
+            hideToolbar={false}
+          />
+        ) : (
+          <Placeholder label="Loading Tableau income chart…" height={700} />
+        )}
       </Section>
 
       {/* ── Section 5: Closing ───────────────────────────────────────────── */}
