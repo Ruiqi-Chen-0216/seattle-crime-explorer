@@ -34,9 +34,12 @@ const DashboardHeader = () => {
                     ${scrolled ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'}`}
       >
         <div className="max-w-5xl mx-auto px-6 py-3 flex justify-between items-center">
-          <span className="text-xs font-bold uppercase tracking-widest text-[#383838]">
-            Seattle Crime Explorer
-          </span>
+          <div className="flex items-center gap-2">
+            <img src={process.env.PUBLIC_URL + '/logo.svg'} alt="Seattle Crime Explorer" className="w-6 h-6" />
+            <span className="text-xs font-bold uppercase tracking-widest text-[#383838]">
+              Seattle Crime Explorer
+            </span>
+          </div>
           <nav className="flex gap-4">
             {NAV_LINKS.map(({ href, label }) => (
               <a
@@ -74,7 +77,7 @@ const DashboardHeader = () => {
               </h1>
               <div className="font-light italic text-3xl sm:text-4xl text-gray-400 leading-tight">
                 <div>2017</div>
-                <div>2026</div>
+                <div>2025</div>
               </div>
               <h1 className="text-[72px] sm:text-[96px] md:text-[120px] font-extrabold
                              text-[#383838] leading-none tracking-tight">
@@ -96,7 +99,7 @@ const DashboardHeader = () => {
               rhythm, and socioeconomic context.
             </p>
             <p className="text-xs text-gray-400">
-              Data: Seattle Police Department incident reports, 2017–2026 ·
+              Data: Seattle Police Department incident reports, 2017–2025 ·
               City of Seattle Open Data Portal · 610,461 records
             </p>
           </div>

@@ -9,7 +9,7 @@ const DashboardFooter = () => {
             <p className="font-semibold text-gray-700 mb-1">Data Source</p>
             <p>Seattle Police Department Crime Data, 2008–Present</p>
             <p className="mt-1">City of Seattle Open Data Portal</p>
-            <p className="mt-1 text-gray-400">Cleaned dataset: 610,461 records · 2017–2026</p>
+            <p className="mt-1 text-gray-400">Cleaned dataset: 610,461 records · 2017–2025</p>
           </div>
           <div>
             <p className="font-semibold text-gray-700 mb-1">Key Cleaning Decisions</p>
