@@ -54,24 +54,27 @@ const SPDCrimeDashboard = () => {
           step="01 — Where"
           question="Where are incidents concentrated across Seattle?"
         />
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
-          <div className="text-sm text-gray-600 leading-relaxed space-y-3">
-            <p>
-              This map provides the broadest view of reported crime across Seattle.
-              It helps users quickly identify which neighborhoods have the highest
-              total incident counts and where crime is spatially concentrated.
-            </p>
-            <p>
-              Because this is the entry point for the page, selecting a neighborhood
-              here updates the comparison views below. The map begins with the two
-              highest-count neighborhoods pre-selected so users can immediately move
-              from <em>where</em> to <em>what kind</em>.
-            </p>
-            <p className="text-xs text-gray-400 pt-2">
-              Data: SPD reported incidents 2017–2025 · Source: City of Seattle Open Data Portal
-            </p>
-          </div>
-          <Placeholder label="Map — Total Crime Count by Neighborhood" height={360} />
+        <p className="text-sm text-gray-600 leading-relaxed max-w-2xl mb-2">
+          This map provides the broadest view of reported crime across Seattle,
+          helping you quickly identify which neighborhoods have the highest total
+          incident counts and where crime is spatially concentrated.
+        </p>
+        <p className="text-sm text-gray-600 leading-relaxed max-w-2xl mb-1">
+          Capitol Hill, Queen Anne, and Downtown Commercial consistently rank among
+          the highest-crime neighborhoods — use this as your starting point before
+          diving into crime type and timing in the sections below.
+        </p>
+        <p className="text-xs text-gray-400 mb-6">
+          Data: SPD reported incidents 2017–2025 · City of Seattle Open Data Portal
+        </p>
+        <div className="w-full rounded overflow-hidden shadow-sm">
+          <iframe
+            src="https://lookerstudio.google.com/embed/reporting/73d2a1b9-240a-4492-87c0-68ed1221816e/page/p_f5whwm0f1d"
+            style={{ width: '100%', height: '560px', border: 0 }}
+            allowFullScreen
+            sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
+            title="Seattle Crime Map by Neighborhood"
+          />
         </div>
       </Section>
 
