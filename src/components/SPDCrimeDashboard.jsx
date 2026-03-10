@@ -102,7 +102,7 @@ const SPDCrimeDashboard = () => {
         </p>
         {isTableauLoaded ? (
           <TableauViz
-            vizUrl="https://public.tableau.com/views/SeattleCrimeWatch/CityWideRadarChart"
+            vizUrl="https://public.tableau.com/views/SeattleCrimeWatch_17731183365030/CityWideRadarChart"
             height={700}
             hideTabs={true}
             hideToolbar={false}
