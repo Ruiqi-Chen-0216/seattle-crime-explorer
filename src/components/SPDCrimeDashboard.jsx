@@ -162,7 +162,7 @@ const SPDCrimeDashboard = () => {
         </p>
         {isTableauLoaded ? (
           <TableauViz
-            vizUrl="https://public.tableau.com/views/Final_Visualization_17727382627890/BarChartIncomesandCrimeCount"
+            vizUrl="https://public.tableau.com/views/Final_Visualization_17727382627890/BarChartIncomesandCrimeCount?:publish=yes"
             height={700}
             hideTabs={false}
             hideToolbar={false}
