@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/seattle-crime-explorer/static/css/main.5e3ce84a.css",
-    "main.js": "/seattle-crime-explorer/static/js/main.a40d8b3e.js",
+    "main.js": "/seattle-crime-explorer/static/js/main.e6987149.js",
     "static/js/488.84348f95.chunk.js": "/seattle-crime-explorer/static/js/488.84348f95.chunk.js",
     "static/media/open-sans-latin-300-normal.woff2": "/seattle-crime-explorer/static/media/open-sans-latin-300-normal.6dacce4cff13d02117d6.woff2",
     "static/media/open-sans-latin-400-normal.woff2": "/seattle-crime-explorer/static/media/open-sans-latin-400-normal.feb0d8644aca3df9fabf.woff2",
@@ -65,11 +65,11 @@
     "static/media/open-sans-greek-ext-300-normal.woff": "/seattle-crime-explorer/static/media/open-sans-greek-ext-300-normal.26c1e8d64660c5b342d6.woff",
     "index.html": "/seattle-crime-explorer/index.html",
     "main.5e3ce84a.css.map": "/seattle-crime-explorer/static/css/main.5e3ce84a.css.map",
-    "main.a40d8b3e.js.map": "/seattle-crime-explorer/static/js/main.a40d8b3e.js.map",
+    "main.e6987149.js.map": "/seattle-crime-explorer/static/js/main.e6987149.js.map",
     "488.84348f95.chunk.js.map": "/seattle-crime-explorer/static/js/488.84348f95.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.5e3ce84a.css",
-    "static/js/main.a40d8b3e.js"
+    "static/js/main.e6987149.js"
   ]
 }
