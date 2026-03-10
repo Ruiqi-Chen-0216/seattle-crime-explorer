@@ -85,26 +85,25 @@ const SPDCrimeDashboard = () => {
           question="What types of crime define each neighborhood — and how do they differ?"
         />
         <p className="text-sm text-gray-600 leading-relaxed max-w-2xl mb-2">
-          Similar overall crime counts don't mean similar crime profiles. This radar
-          chart compares the share of each offense type across Seattle neighborhoods
-          — use the checkbox panel to select any two neighborhoods and see how their
-          crime composition diverges.
+          This radar chart provides a severity-weighted crime type ranking by
+          neighborhood — use the checkbox panel to select any two neighborhoods
+          and see how their crime composition diverges.
         </p>
         <p className="text-sm text-gray-600 leading-relaxed max-w-2xl mb-1">
-          For example, Capitol Hill and Downtown Seattle share high rates of
-          larceny, burglary, and assault — but Downtown stands apart with elevated
-          levels of human trafficking, gambling offenses, and liquor law violations,
-          categories that barely register in Capitol Hill.
+          For example, Capitol Hill and Downtown Seattle share high percentiles of
+          larceny, burglary, and assault. On the other hand, Downtown diverges with
+          high percentiles in human trafficking, gambling, and liquor law violations,
+          which rarely appear in Capitol Hill's profile.
         </p>
         <p className="text-xs text-gray-400 mb-6">
-          Each axis shows the neighborhood's share of that crime type relative to
-          the citywide distribution (2017–2025).
+          Each axis shows the percentile of each crime type for the selected
+          neighborhood (2017–2025).
         </p>
         {isTableauLoaded ? (
           <TableauViz
             vizUrl="https://public.tableau.com/views/SeattleCrimeWatch_17731183365030/CityWideRadarChart"
             height={700}
-            hideTabs={true}
+            hideTabs={false}
             hideToolbar={false}
           />
         ) : (
