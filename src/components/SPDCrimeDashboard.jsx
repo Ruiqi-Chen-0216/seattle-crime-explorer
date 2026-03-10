@@ -69,13 +69,24 @@ const SPDCrimeDashboard = () => {
         </p>
         <div className="w-full rounded overflow-hidden shadow-sm">
           <iframe
-            src="https://lookerstudio.google.com/reporting/e2d7f9f8-1fcf-4af6-af57-53b0a22b7ccd/page/p_f5whwm0f1d"
+            src="https://lookerstudio.google.com/embed/reporting/e2d7f9f8-1fcf-4af6-af57-53b0a22b7ccd/page/p_f5whwm0f1d"
             style={{ width: '100%', height: '560px', border: 0 }}
             allowFullScreen
             sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
             title="Seattle Crime Map by Neighborhood"
           />
         </div>
+        <p className="mt-3 text-sm text-gray-500">
+          If the embedded view fails on mobile, open the full report here:{' '}
+          <a
+            href="https://lookerstudio.google.com/reporting/e2d7f9f8-1fcf-4af6-af57-53b0a22b7ccd/page/p_f5whwm0f1d"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-600 hover:text-blue-700 underline"
+          >
+            Open Looker Studio report
+          </a>
+        </p>
       </Section>
 
       {/* ── Section 2: What ──────────────────────────────────────────────── */}
