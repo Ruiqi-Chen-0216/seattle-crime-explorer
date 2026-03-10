@@ -160,11 +160,6 @@ const SPDCrimeDashboard = () => {
           higher income. A clear pattern emerges: the neighborhoods with the most
           reported crime tend to also be those with the lowest median incomes.
         </p>
-        <p className="text-sm text-gray-600 leading-relaxed max-w-2xl mb-1">
-          Switch to the <em>Treemap</em> tab for a proportional area view, or the
-          <em> Time Series</em> tab to see how per-capita crime rates have shifted
-          across years for each neighborhood.
-        </p>
         <p className="text-xs text-gray-400 mb-6">
           This relationship is contextual, not causal — income correlates with
           many other neighborhood factors including density, land use, and
@@ -192,7 +187,7 @@ const SPDCrimeDashboard = () => {
             { step: '01', label: 'Where', desc: 'The map shows where crime is spatially concentrated across neighborhoods.' },
             { step: '02', label: 'What', desc: 'The radar chart shows what types of crime dominate in selected neighborhoods.' },
             { step: '03', label: 'When', desc: 'The hourly views show when those crime types most commonly occur.' },
-            { step: '04', label: 'Context', desc: 'The scatter view situates neighborhoods within a broader socioeconomic frame.' },
+            { step: '04', label: 'Context', desc: 'The income-and-crime view situates neighborhoods within a broader socioeconomic frame.' },
           ].map(({ step, label, desc }) => (
             <div key={step} className="bg-white/10 rounded p-4">
               <p className="text-xs font-bold text-gray-400 mb-1">{step} — {label}</p>
